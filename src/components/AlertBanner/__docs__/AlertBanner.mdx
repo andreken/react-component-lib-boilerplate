@@ -1,0 +1,62 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import AlertBanner from '../AlertBanner';
+
+<Meta title="UI Components/AlertBanner" component={AlertBanner} />
+
+# AlertBanner Component
+
+The `AlertBanner` component is used to display contextual messages to users. It supports different variants to convey the nature of the alert (e.g., success, error, warning).
+
+## Props
+
+### `variant`
+
+- **Type**: `'success' | 'error' | 'warning'` (Optional)
+- **Default**: `'success'`
+- **Description**: Defines the style and type of alert.
+
+### `title`
+
+- **Type**: `string`
+- **Description**: The main title of the alert message.
+
+### `message`
+
+- **Type**: `string`
+- **Description**: The detailed message displayed within the alert.
+
+## Example Usage
+
+```jsx
+import AlertBanner from '../AlertBanner';
+
+<AlertBanner
+  variant="success"
+  title="Success!"
+  message="Your operation was successful."
+/>;
+```
+
+## Variants
+
+### Success
+
+```jsx
+<AlertBanner
+  variant="success"
+  title="Success"
+  message="Operation completed successfully."
+/>
+```
+
+### Error (Default)
+
+```jsx
+<AlertBanner title="Error" message="An error occurred." />
+```
+
+### Warning
+
+```jsx
+<AlertBanner variant="warning" title="Warning" message="Please be cautious." />
+```

@@ -1,0 +1,70 @@
+@use '@/variables.scss' as v;
+
+.btn {
+  display: inline-block;
+  border-radius: 24px;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.primary {
+    background: v.$color_primary;
+    border: 1px solid v.$color_primary;
+    color: v.$color_white;
+    &:hover:not(.disabled) {
+      background: v.$color_primary_light;
+      border-color: v.$color_primary_light;
+    }
+    &.disabled {
+      background: v.$color_neutral_light;
+      border-color: v.$color_neutral_light;
+      color: v.$color_neutral;
+      cursor: not-allowed;
+    }
+  }
+  &.secondary {
+    background: transparent;
+    border: 1px solid v.$color_primary;
+    color: v.$color_primary;
+    &:hover:not(.disabled) {
+      background: v.$color_primary_light;
+      border-color: v.$color_primary_light;
+      color: v.$color_white;
+    }
+    &.disabled {
+      border-color: v.$color_neutral_light;
+      color: v.$color_neutral;
+      cursor: not-allowed;
+    }
+  }
+  &.ghost {
+    background: transparent;
+    border: 1px solid transparent;
+    color: v.$color_primary;
+    &:hover:not(.disabled) {
+      border-color: v.$color_primary;
+    }
+    &.disabled {
+      color: v.$color_neutral;
+      cursor: not-allowed;
+    }
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    &.right {
+      flex-direction: row-reverse;
+    }
+  }
+}

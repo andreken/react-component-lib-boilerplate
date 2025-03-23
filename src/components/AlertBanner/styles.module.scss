@@ -1,0 +1,43 @@
+@use '@/variables.scss' as v;
+
+.alert {
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  display: flex;
+
+  &.success {
+    color: v.$color_success;
+    background-color: v.$color_success_light;
+    border: 2px solid v.$color_success;
+  }
+
+  &.warning {
+    color: v.$color_evidence;
+    background-color: v.$color_evidence_light;
+    border: 2px solid v.$color_evidence;
+  }
+
+  &.error {
+    color: v.$color_error_light;
+    background-color: v.$color_error;
+    border: 2px solid v.$color_error_light;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}

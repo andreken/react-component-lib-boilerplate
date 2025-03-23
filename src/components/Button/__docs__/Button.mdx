@@ -1,0 +1,61 @@
+# Button Component
+
+The `Button` component is a customizable button that supports various styles, icons, and behaviors, such as rendering as a link or enabling/disabling the button.
+
+## Props
+
+### `cta`
+
+- **Type**: `{ href: string; target?: '_blank' | '_parent' | '_self' | 'top' }` (Optional)
+- **Description**: Allows transforming the button into a link. If present, the component will render an `<a>` element instead of a `<button>`.
+
+### `disabled`
+
+- **Type**: `boolean` (Optional)
+- **Default**: `false`
+- **Description**: Disables interaction with the button, making it non-clickable.
+
+### `icon`
+
+- **Type**: `{ position: 'left' | 'right'; value: ReactElement }` (Optional)
+- **Description**: Adds an icon to the button, which can be positioned to the left or right of the text.
+
+### `variant`
+
+- **Type**: `'primary' | 'secondary' | 'ghost'` (Optional)
+- **Default**: `'primary'`
+- **Description**: Defines the button style. Possible values are:
+  - `primary`: main button, usually highlighted.
+  - `secondary`: secondary button, less prominent.
+  - `ghost`: transparent button, usually used for secondary actions.
+
+### `text`
+
+- **Type**: `string`
+- **Description**: Text to display in the button.
+
+### `type`
+
+- **Type**: `'button' | 'submit' | 'reset'` (Optional)
+- **Description**: Button type (equivalent to the `type` attribute of an HTML `<button>`).
+
+### `onClick`
+
+- **Type**: `(event: React.MouseEvent<HTMLButtonElement>) => void` (Optional)
+- **Description**: Callback function called when the button is clicked.
+
+## Usage Example
+
+```tsx
+import Button from '../Button';
+
+export const Example = () => {
+  return (
+    <Button
+      text="Click Me"
+      variant="primary"
+      onClick={() => alert('Button clicked!')}
+    />
+  );
+};
+```

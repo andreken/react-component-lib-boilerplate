@@ -1,0 +1,17 @@
+node_modules
+# Ignore artifacts:
+build
+coverage
+dist
+
+# **/*.json
+**/*.html
+# **/*.scss
+**/*.css
+**/*.test.tsx
+
+webpack.config.js
+react-app-env.d.ts
+setupTests.ts
+
+README.md
