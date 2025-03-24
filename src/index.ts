@@ -1,3 +1,2 @@
-/**
- * DO NOT DELETE: Fake entry point used to make vite plugin works, even if not needed because manually mapping entry points
- */
+export { default as AlertBanner } from './components/AlertBanner/AlertBanner';
+export { default as Button } from './components/Button/Button';

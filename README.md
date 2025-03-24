@@ -42,20 +42,20 @@ npm run storybook
 
 ```
 /
-├── src/                  # Source code
-│   ├── assets/           # SVG icons
-│   ├── components/       # UI components
-│   │   ├── Button/       # Component folder
-│   │   │   ├── Button.tsx         # Main component file
-│   │   │   ├── styles.module.scss # Component styles
-│   │   │   ├── __docs__/          # Storybook stories and docs
-│   │   │   └── components/        # Private sub-components (if needed)
-│   │   └── ...          # Other components
-│   └── index.ts          # Main entry point (FAKE) for exports
-├── .storybook/          # Storybook configuration
-├── dist/                # Build output
-├── vite.config.js       # Vite configuration
-└── tsconfig.json        # TypeScript configuration
+├── src/                            # Source code
+│   ├── assets/                     # SVG icons
+│   ├── components/                 # UI components
+│   │   ├── Button/                 # Component folder
+│   │   │   ├── Button.tsx          # Main component file
+│   │   │   ├── styles.module.scss  # Component styles
+│   │   │   ├── __docs__/           # Storybook stories and docs
+│   │   │   └── components/         # Private sub-components (if needed)
+│   │   └── ...                     # Other components
+│   └── index.ts                    # Main entry point (FAKE) for exports
+├── .storybook/                     # Storybook configuration
+├── dist/                           # Build output
+├── vite.config.js                  # Vite configuration
+└── tsconfig.json                   # TypeScript configuration
 ```
 
 ## Development
@@ -66,6 +66,10 @@ npm run storybook
 2. Add the main component file (e.g., `ComponentName.tsx`)
 3. Create styles using `styles.module.scss`
 4. Create Storybook stories in `__docs__/`
+5. Export the component in `src/index.ts`
+   ```ts
+   export { default as ComponentName } from './components/ComponentName/ComponentName';
+   ```
 
 ### Component Template
 
@@ -124,7 +128,8 @@ npm run build
 ```
 
 This generates:
-- Individual JS files for each component in the `dist/` directory
+- Main JS file exporting all components in `dist/` directory
+- Individual JS files for each component in the `dist/components` directory
 - TypeScript declaration files (`.d.ts`) for proper type support
 - CSS injected directly into the JavaScript for zero-config styling
 

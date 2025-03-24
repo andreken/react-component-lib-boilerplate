@@ -26,7 +26,7 @@ export default defineConfig({
     // Generates TypeScript declaration files (.d.ts)
     dts({
       // Include every files that are in src directory and inside each folder contained in components,
-      // while excluding nested functions or components (eg. FileUpload hooks and nested components)
+      // while excluding nested functions/hooks or components (eg. AlertBanner)
       include: ['src/*', 'src/components/*/*'],
     }),
     // Injects CSS into JavaScript instead of creating separate files
@@ -48,12 +48,12 @@ export default defineConfig({
       /**
        * Manually telling rollup which files to process, to generate a single js file for each component
        * When using the library I want to import only js files related to the imported components to reduce app bundle size,
-       * while avoiding having multiple js files for a single component (eg. FileUpload)
+       * while avoiding having multiple js files for a single component (eg. AlertBanner)
        */
       input: Object.fromEntries(
         glob
-          // Estract all tsx/ts files that are exactly one level deep inside each component folder
-          .sync('src/components/*/*.{ts,tsx}', {
+          // Estract main index file and all tsx/ts files that are exactly one level deep inside each component folder
+          .sync(['src/index.ts', 'src/components/*/*.{ts,tsx}'], {
             ignore: ['src/**/*.d.ts', 'src/**/__docs__/*'],
           })
           .map(file => [
